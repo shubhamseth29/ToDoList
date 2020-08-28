@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  background-image: url("/images/cloud2.jpeg");
+  background-image: url("/images/cloud2.jpg");
   background-size: cover;
 }
 
@@ -287,7 +287,9 @@ label {
     background: linear-gradient(90deg, #e3ffe7 0%, #6f737a4d 100%);
     display: -ms-grid;
     display: grid;
-    grid: "header" auto "lists" auto  "tasks" auto;
+    grid: "header" auto
+ "lists" auto
+  "tasks" auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
