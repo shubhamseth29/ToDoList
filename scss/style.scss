@@ -1,0 +1,261 @@
+@import "colors";
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    display: grid;
+    font-family:monospace ;
+    font-weight: 300;
+    color: white;
+}
+
+body{
+    background-image: url("/images/cloud2.jpeg");
+    background-size: cover;
+}
+
+.container
+{
+    background:$secondary;
+    display: grid;
+    grid:
+    "header header header header" auto
+    "...... lists  tasks  ......" auto/
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+.mainTitle{
+    opacity: 0.7;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.taskTitle{
+    font-weight: 100;
+    text-decoration:  underline overline dotted;
+}
+.header{
+    grid-area: header;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(16, 5, 100, 0.3);
+
+}
+
+.allLists{
+    grid-area: lists;
+
+    
+}
+
+.listList{
+    font-size: 1.2rem;
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.1em;
+
+    .listName{
+        cursor: pointer;
+        scale: (1);
+    }
+
+    .listName:hover{
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+
+}
+
+form{
+    display: flex;
+}
+
+.Btn{
+    background: none;
+    border: 0;
+    padding: 0;
+    color: inherit;
+
+}
+
+.Btn.list{
+    
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-right: 0.25em;
+    transition: opacity 150ms ease-in;
+    scale: (1);
+}
+
+.Btn.list:hover{
+
+    opacity: 0.5;
+    transform: scale(1.5);
+    
+}
+
+.Btn.task{
+    
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-right: 0.25em;
+    transition: opacity 150ms ease-in;
+    scale: (1);
+}
+
+.Btn.task:hover{
+
+    opacity: 0.5;
+    transform: scale(1.5);
+    
+}
+
+.Btn.deleteTask{
+    opacity: 0.7;
+  font-size: 1rem;
+  transition: color 400ms;
+}
+
+.Btn.deleteTask:hover{
+    background: cornsilk;
+    border-radius: 30%;
+    color: $danger;
+    transform: scale(1.5);
+}
+
+.Btn.deleteList{
+    opacity: 0.7;
+  font-size: 1rem;
+  transition: color 400ms;
+}
+
+.Btn.deleteList:hover{
+    background: cornsilk;
+    border-radius: 30%;
+    color: $danger;
+    transform: scale(1.5);
+}
+
+.listInput ,
+.taskInput{
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    font-size: inherit;
+    outline: none;
+    padding: 0.25em;
+    transition: border-bottom 150ms ease-in;
+}
+
+.listInput::placeholder ,
+.taskInput::placeholder{
+    opacity: 0.8;
+
+}
+
+.listInput:focus,
+.taskInput:focus{
+    border-bottom-width: 20px;
+}
+
+
+
+.allTasks{
+    grid-area: tasks;
+}
+
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+  }
+  
+
+  .task {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .task::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.5em;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.1;
+  }
+  
+  .checkboxDesign {
+    --size: 0.75em;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    margin-right: var(--size);
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+  }
+  label{
+    cursor: pointer;
+    transition: text-decoration 300ms;
+  }
+  .task:hover .checkboxDesign,
+  [type="checkbox"]:focus + label .checkboxDesign {
+    transform: scale(2.0);
+    
+  }
+
+  [type="checkbox"]:checked + label {
+    text-decoration: line-through; 
+    
+  }
+  
+ 
+.deleteTask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.quote{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quoteText{
+  
+}
+.quoteBtn{
+   background: none;
+   box-shadow: 5px 5px 5px 5px;
+}
+
+.quoteBtn:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+ 
+
+@media (max-width:600px)
+{
+    .container
+    {
+        background:$secondary;
+        display: grid;
+        grid:
+        "header" auto
+        "lists" auto
+        
+        "tasks" auto
+    
+    }
+}
