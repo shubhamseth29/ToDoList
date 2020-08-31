@@ -21,20 +21,24 @@ body{
 .container
 {
     background:$secondary;
+    height: calc(100vh - 400px);
+    position: fixed;
+    overflow: auto;
     display: grid;
     grid:
     "header header header header" auto
     "...... lists  tasks  ......" auto/
-    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+    1fr minmax(100px,300px) minmax(250px, 500px) 1fr;
 }
-.mainTitle{
+.mainTitle
+{
     opacity: 0.7;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .taskTitle{
     font-weight: 100;
-    text-decoration:  underline overline dotted;
+    text-decoration: underline dotted;
 }
 .header{
     grid-area: header;
@@ -47,8 +51,8 @@ body{
 
 .allLists{
     grid-area: lists;
-
-    
+    position: relative;
+    overflow: scroll;
 }
 
 .listList{
@@ -254,8 +258,12 @@ form{
         grid:
         "header" auto
         "lists" auto
-        
         "tasks" auto
-    
     }
+    .taskTitle
+    {
+    font-weight: 100;
+    text-decoration:underline dotted;
+    }
+
 }

@@ -6,31 +6,33 @@
     <link rel="icon" type="image" href="images/todoIcon.ico">
     <title>ToDo List</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script defer src="JS/script.js"></script>
+    <!-- <script defer src="JS/script.js"></script> -->
+    <script defer src="JS/script2.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
         <h1 class="header">JUST DO IT !!</h1>
-        <div class="allLists">
+        <div class="allLists"  >
             <h2 class="mainTitle btn btn-danger">Here are all the lists </h2>    
-            <ul class="listList">
-                <li class="listName">Monday</li>
+            <ul class="listList" id="allLists">
+                <!-- <li class="listName">Monday</li>
                 <li class="listName">Tuesday</li>
-                <li class="listName">Wednesday</li>
+                <li class="listName">Wednesday</li> -->
             </ul>
-            <form id="addList">
-                <input type="text" placeholder="Add list name here" class="listInput">
-                <button class="Btn list">+</button>
+            <form class="addList" id="addList">
+                <input id="listInput" type="text" placeholder="Add list name here" class="listInput">
+                <button id="listBtn"class="Btn list">+</button>
             </form>
         </div>
     
-        <div class="allTasks">
+        <div class="allTasks" id="allTasks">
             <div class="taskHeader">
-                <h2 class="taskTitle">Monday</h2>
+                <h2 class="taskTitle" id="data-list-title"></h2>
             </div>
             <div class="taskBody">
-                <div class="task">
+                <div class="tasks" id="data-tasks"></div>
+                <!-- <div class="task">
                     <input type="checkbox" id="task1">
                    
                     <label for="task1">
@@ -47,27 +49,35 @@
                     
                     <label for="task3">
                         <span class="checkboxDesign"></span>Study Angular one more time.</label>
-                </div>
+                </div> -->
             </div>
             <div class="addNewTask">
-                <form action="">
-                    <input type="text" placeholder="Add task name here" class="taskInput">
+                <form action="" id="data-new-task-form">
+                    <input type="text" id="data-new-task-input" placeholder="Add task name here" class="taskInput">
                     <button class="Btn task">+</button>
                 </form>
             </div>
             <div class="deleteTask">
-                <button class="Btn deleteTask">Clear completed tasks.</button>
-                <button class="Btn deleteList">Delete entire list !</button>
+                <button class="Btn deleteTask" id="data-clear-complete-tasks-button">Clear completed tasks.</button>
+                <button class="Btn deleteList" id="data-delete-list-button">Delete entire list !</button>
             </div>
         </div>  
       
     </div>
     <div class="quote">
         
-        <div class="quoteText"></div>
-        <button class="quoteBtn">Generate new quote!</button>
+        <div class="quoteText" id="quoteText"></div>
+        <small id="quoteAuthor"></small>
+        <button class="quoteBtn" id="quoteBtn">Generate new quote!</button>
     </div>  
-   
+    <template id="task-template">
+        <div class="task">
+          <input type="checkbox" />
+          <label>
+            <span class="checkboxDesign"></span>
+          </label>
+        </div>
+      </template>
     
        
    
